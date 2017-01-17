@@ -27,9 +27,9 @@ extern class Fs {
 	static function existsAssets(filepath:String):Promise<Bool>;
 	static function hash(filepath:String, algorithm:String):Promise<String>;
 	static function mkdir(filepath:String, ?options:MkdirOptions):Promise<Void>;
-	static function downloadFile(options:DownloadFileOptions):{jobId:Int, promise:Promise<DownloadResult>}
+	static function downloadFile(options:DownloadFileOptions):{jobId:Int, promise:Promise<DownloadResult>};
 	static function stopDownload(jobId:Int):Promise<Void>;
-	static function uploadFiles(options:UploadFileOptions):{jobId:Int, promise:Promise<UploadResult>}
+	static function uploadFiles(options:UploadFileOptions):{jobId:Int, promise:Promise<UploadResult>};
 	static function stopUpload(jobId:Int):Promise<Void>;
 	static function getFSInfo():Promise<FSInfoResult>;
 }
@@ -55,6 +55,7 @@ typedef StatResult = {
 	isFile:Void->Bool,        // Is the file just a file?
 	isDirectory:Void->Bool,   // Is the file a directory?
 }
+
 typedef MkdirOptions = {
 	?NSURLIsExcludedFromBackupKey:Bool, // iOS only
 }
