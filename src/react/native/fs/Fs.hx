@@ -22,6 +22,8 @@ extern class Fs {
 	static function moveFile(filepath:String, destPath:String):Promise<Void>;
 	static function copyFile(filepath:String, destPath:String):Promise<Void>;
 	static function copyFileAssets(filepath:String, destPath:String):Promise<Void>;
+	static function copyAssetsFileIOS(imageUri:String, destPath:String, width:Float, height:Float, ?scale:Float, ?compression:Float, ?resizeMode:String):Promise<String>;
+	static function copyAssetsVideoIOS(videoUri:String, destPath:String):Promise<String>;
 	static function unlink(filepath:String):Promise<Void>;
 	static function exists(filepath:String):Promise<Bool>;
 	static function existsAssets(filepath:String):Promise<Bool>;
